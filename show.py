@@ -55,7 +55,7 @@ def main():
     result.paste(img)
     result.paste(heatmap, (w, 0))
     result.show()
-
+    heatmap.save('heatmap.jpg')
 
 
 if __name__ == "__main__":

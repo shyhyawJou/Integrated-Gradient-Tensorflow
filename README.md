@@ -12,7 +12,7 @@ python show.py -d cpu -img assets/n01669191_46.JPEG -step 20
 ```
 
 - for custom model  
-model path is a file including weight and architecture. 
+model path is a saved model folder path including keras_metadata.pb.
 ```
 python show.py -d cpu -img assets/n01669191_46.JPEG -step 20 -m {your model path}
 ```

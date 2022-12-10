@@ -29,8 +29,7 @@ class Integrated_Gradient:
                 x = tf.Variable(x)
                 X, delta_X = self._get_X_and_delta(x, baseline, self.steps)
                 grad = tape.gradient(tf.reduce_sum(self.model(X)[:, pred_label]), X)
-                ig_grad = delta_X * (grad[:-1] + grad[1:]) / 2.          
-                ig_grad = tf.reduce_sum(ig_grad, axis=0)
+                ig_grad = tf.reduce_sum(delta_X * (grad[:-1] + grad[1:]) / 2., axis=0)
 
             # plot
             cam = tf.nn.relu(ig_grad)
